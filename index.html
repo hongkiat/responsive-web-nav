@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<title>Responsive Navigation - Hongkiat.com</title>
+
+<!--  jquery -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="../_nav/js/jquery.js"><\/script>')</script>
+
+<!-- demo scripts -->
+<link rel="stylesheet" href="style.css">
+<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+
+<script>
+$(function() {
+	var pull 		= $('#pull');
+		menu 		= $('nav ul');
+		menuHeight	= menu.height();
+
+	$(pull).on('click', function(e) {
+		e.preventDefault();
+		menu.slideToggle();
+	});
+
+	$(window).resize(function() {
+		var w = $(window).width();
+		if(w > 320 && menu.is(':hidden')) {
+			menu.removeAttr('style');
+		}
+	});
+});
+</script>
+
+<!-- nav script -->
+<script src="../_nav/js/nav.js" type="text/javascript"></script>
+</head>
+
+<body>
+
+<!-- nav meta -->
+<div class="demo-meta">
+	<h1 class="demo-title">Responsive Navigation</h1>
+	<p class="demo-desc">This demo shows an example of responsive navigation. Resize your browsers window or view this demo in smaller screen to see the effect.</p>	
+</div>
+
+<!-- demo content -->
+<nav class="clearfix">
+	<ul class="clearfix">
+		<li><a href="#">Home</a></li>
+		<li><a href="#">How-to</a></li>
+		<li><a href="#">Icons</a></li>
+		<li><a href="#">Design</a></li>
+		<li><a href="#">Web 2.0</a></li>
+		<li><a href="#">Tools</a></li>	
+	</ul>
+	<a href="#" id="pull">Menu</a>
+</nav>
+
+</body>
+</html>
